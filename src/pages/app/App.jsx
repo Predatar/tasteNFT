@@ -12,10 +12,10 @@ const App = () => {
       <Router>
         <Header />
         <Switch>
-          <Route exact to="/">
+          <Route exact path="/">
             <MainPage />
           </Route>
-          <Route to="/second">
+          <Route path="/second">
             <SecondPage />
           </Route>
         </Switch>
