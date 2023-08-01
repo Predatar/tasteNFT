@@ -1,0 +1,100 @@
+.userInfo {
+  padding: 6px 12px 6px 10px;
+  width: 131px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+
+  position: absolute;
+  top: 12px;
+  left: 16px;
+}
+.userInfoImg {
+  display: flex;
+  align-items: center;
+}
+
+.userInfoWrapper {
+  margin-left: 8px;
+}
+
+.userInfoName {
+  color: #1d2228;
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 700;
+}
+.userInfoTag {
+  margin-top: 2px;
+  font-family: 'Raleway';
+  font-size: 12px;
+  font-weight: 500;
+
+  background: linear-gradient(270deg, #8743ff 0%, #4136f1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.artWork {
+  width: 317px;
+
+  position: relative;
+}
+
+.artWorkImg {
+  height: 317px;
+  border-radius: 1px;
+}
+
+.artWorkWrapper {
+  padding: 24px 15px 15px;
+  border: 1px solid #333940;
+  border-top: 0px solid transparent;
+}
+
+.artWorkName {
+  margin-bottom: 16px;
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.artWorkContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &:last-child {
+    margin-top: 12px;
+  }
+}
+
+.artWorkDescr {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.artWorkTimer {
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.artWorkSold {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 600;
+  svg {
+    margin-right: 5px;
+  }
+}

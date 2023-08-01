@@ -1,0 +1,143 @@
+.wrapper {
+  margin: 0 auto;
+  width: 1318px;
+  display: flex;
+}
+.container {
+  &:first-child {
+    margin-top: 312px;
+    width: 516px;
+  }
+  &:last-child {
+    margin-top: 40px;
+    margin-left: 16px;
+    width: 100%;
+    max-width: 786px;
+    overflow: hidden;
+  }
+}
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+.userInfoImg {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.15);
+}
+.userInfoWrapper {
+  margin-left: 12px;
+}
+.userInfoName {
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 700;
+}
+.userInfoTag {
+  margin-top: 4px;
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 500;
+
+  background: linear-gradient(270deg, #8743ff 0%, #d8c2ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.info {
+  margin-top: 20px;
+}
+.infoTitle {
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 32px;
+  font-weight: 700;
+}
+.infoDescr {
+  margin-top: 12px;
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  span {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Raleway';
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+.slider {
+  margin: 4px 0 0 0;
+  max-width: 519px;
+  height: 548px;
+}
+.sliderSlide {
+  width: 524px !important;
+  height: 524px !important;
+  left: -34px !important;
+  bottom: 7px !important;
+  transform: 0deg !important;
+}
+.sliderImg {
+  width: 524px;
+  height: 524px;
+}
+
+.detail {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detailContainer {
+  display: flex;
+  align-items: center;
+}
+
+.sold {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.soldCount {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 600;
+  svg {
+    margin-right: 5px;
+  }
+}
+
+.detailWrapper {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detailLink {
+  padding: 9px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.15);
+  }
+  span {
+    color: #fff;
+  }
+}

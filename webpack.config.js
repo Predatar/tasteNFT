@@ -54,7 +54,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.woff2?$/i,
+        test: /\.(woff2?|eot|ttf)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'fonts/[name].[ext]'
@@ -96,5 +96,28 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.js', '.jsx']
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minSize: 20000,
+      minRemainingSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          reuseExistingChunk: true
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
   }
 };
