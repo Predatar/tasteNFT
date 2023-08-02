@@ -7,7 +7,8 @@
     "start-dev": "webpack serve",
     "build-dev": "webpack",
     "build-prod": "webpack --node-env=production",
-    "clear": "rd /s /q build"
+    "clear": "rd /s /q build",
+    "server": "http-server build -o"
   },
   "keywords": [],
   "author": "",
