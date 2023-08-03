@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Logo from '../logo/Logo';
 
 import styles from './Header.module.scss';
 import BtnHeader from '../button/btnHeader/BtnHeader';
 
-const Header = ({text, setText}) => {
+const Header = ({ text, setText }) => {
   const searchInput = ({ target }) => {
     setText(target.value);
   };

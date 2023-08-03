@@ -40,9 +40,9 @@ const ArtWork = props => {
   };
 
   return (
-    <Link to={`/artWork/A`}>
+    <Link to={`/artWorkPage`}>
       <div className={styles.artWork}>
-        <UserInfo userImg={props.userImg}/>
+        <UserInfo userImg={props.userImg} />
         <div className={styles.artWorkImg}>
           <img src={props.artWork} alt="artWork" />
         </div>
@@ -271,7 +271,7 @@ const ArtWork = props => {
   );
 };
 
-const UserInfo = (props) => {
+const UserInfo = props => {
   return (
     <div className={styles.userInfo}>
       <div className={styles.userInfoImg}>

@@ -1,0 +1,26 @@
+.btn {
+  margin: 24px auto 0;
+  width: 121px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  /* opacity: 0.2; */
+  background: linear-gradient(270deg, rgba(135, 67, 255, 0.2) 0%, rgba(65, 54, 241, 0.2) 100%);
+
+  cursor: pointer;
+
+  span {
+    font-family: 'Raleway';
+    font-size: 14px;
+    font-weight: 700;
+
+    background: var(--linear, linear-gradient(270deg, #8743ff 0%, #d8c2ff 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
