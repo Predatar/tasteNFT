@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import List from '../../components/select';
 import ArtWork from '../../components/card/artWork/ArtWork';
@@ -20,6 +21,9 @@ import userImg4 from '../../img/user/user4.jpg';
 const Search = () => {
   return (
     <>
+      <Helmet>
+        <title>Search - TasteNFT</title>
+      </Helmet>
       <div className={styles.search}>
         <div className={styles.filters}>
           <List items={['Recently added', 'Latest']} />

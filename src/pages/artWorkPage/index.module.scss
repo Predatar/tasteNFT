@@ -1,8 +1,126 @@
 .container {
-	margin: 40px auto 0;
+  margin: 40px auto 0;
   width: min(100%, 1318px);
-
 }
 .img {
-  // width: 1318px;
+  position: relative;
+}
+.info {
+  margin-top: 62px;
+  display: flex;
+  gap: 23px;
+}
+.infoWrapper {
+  &:first-child {
+    width: 517px;
+  }
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+.userInfoImg {
+  width: 49px;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.15);
+}
+.userInfoWrapper {
+  margin-left: 12px;
+}
+.userInfoName {
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 700;
+}
+.userInfoTag {
+  margin-top: 4px;
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 500;
+
+  background: linear-gradient(270deg, #8743ff 0%, #d8c2ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.title {
+  margin-top: 20px;
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 32px;
+  font-weight: 700;
+}
+.copy {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  span {
+    color: #fff;
+    font-family: 'Raleway';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+}
+.descr {
+  margin-top: 10px;
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  span {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Raleway';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+}
+.externalLinks {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.externalLink {
+  padding: 9px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.15);
+  }
+  span {
+    color: #fff;
+  }
+}
+
+.titleSecond {
+  margin-top: 5px;
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.featureWorks {
+  margin-top: 99px;
+}
+.featureWorksTitle {
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 700;
 }

@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const mode = process.env.NODE_ENV || 'development';
 const devMode = mode == 'development';
@@ -20,7 +22,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     clean: true,
-    filename: '[name].[contenthash].js',
+    filename: devMode ? '[name].js' : '[name].[contenthash].js',
     assetModuleFilename: 'assets/[name][ext]'
   },
   plugins: [
@@ -29,7 +31,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ],
   module: {
     rules: [
@@ -100,6 +103,8 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: 'all'
-    }
+    },
+    minimize: true,
+    minimizer: [new TerserPlugin({ parallel: true, minify: TerserPlugin.swcMinify })]
   }
 };

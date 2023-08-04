@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 import Header from '../../components/header/Header';
 
-import MainPage from '../main';
-import Search from '../search';
-import ArtWorkPage from '../artWorkPage';
+const MainPage = React.lazy(() => import('../main'));
+const Search = React.lazy(() => import('../search'));
+const ArtWorkPage = React.lazy(() => import('../artWorkPage'));
+import Spinner from '../../components/spinner';
 
 import styles from './App.module.scss';
 
@@ -18,10 +19,32 @@ const App = () => {
         <Header text={text} setText={setText} />
         <Switch>
           <Route exact path="/">
-            {text ? <Redirect to="/search" /> : <ArtWorkPage />}
+            {text ? (
+              <Redirect to="/search" />
+            ) : (
+              <Suspense fallback={<Spinner />}>
+                <MainPage />
+              </Suspense>
+            )}
           </Route>
-          <Route path="/artWorkPage">{text ? <Redirect to="/search" /> : <ArtWorkPage />}</Route>
-          <Route path="/search">{text ? <Search /> : <Redirect to="/" />}</Route>
+          <Route path="/artWorkPage">
+            {text ? (
+              <Redirect to="/search" />
+            ) : (
+              <Suspense fallback={<Spinner />}>
+                <ArtWorkPage />
+              </Suspense>
+            )}
+          </Route>
+          <Route path="/search">
+            {text ? (
+              <Suspense fallback={<Spinner />}>
+                <Search />
+              </Suspense>
+            ) : (
+              <Redirect to="/" />
+            )}
+          </Route>
         </Switch>
       </Router>
     </div>
