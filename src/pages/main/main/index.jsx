@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Btn from '../../../components/button/btn/Btn';
 
@@ -30,7 +31,7 @@ const Main = () => {
           </div>
           <div className={styles.userInfoWrapper}>
             <div className={styles.userInfoName}>User Name</div>
-            <div className={styles.userInfoTag}>@username</div>
+            <Link to={'/creatorPage'} className={styles.userInfoTag}>@username</Link>
           </div>
         </div>
         <div className={styles.info}>
@@ -53,7 +54,7 @@ const Main = () => {
             <Btn text="View" />
             <div className={styles.detailWrapper}>
               <div className={styles.detailLink}>
-                <span className="icon-external-link" ></span>
+                <span className="icon-external-link"></span>
               </div>
               <div className={styles.detailLink}>
                 <span className="icon-share"></span>

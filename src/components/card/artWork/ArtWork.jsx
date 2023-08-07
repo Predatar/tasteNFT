@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import styles from './ArtWork.module.scss';
 
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-router-dom';
 
 import miniLogo from '../../../img/miniLogo.svg';
 
@@ -75,9 +75,9 @@ const UserInfo = props => {
       </div>
       <div className={styles.userInfoWrapper}>
         <div className={styles.userInfoName}>User Name</div>
-        <a href="#" className={styles.userInfoTag}>
+        <Link to={'/creatorPage'} className={styles.userInfoTag}>
           @username
-        </a>
+        </Link>
       </div>
     </div>
   );

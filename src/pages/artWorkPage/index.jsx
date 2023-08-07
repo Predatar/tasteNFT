@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import InfoModal from './infoModal';
 import ActivityRowGroup from '../../components/activityRowGroup';
@@ -27,7 +28,9 @@ const ArtWorkPage = () => {
             </div>
             <div className={styles.userInfoWrapper}>
               <div className={styles.userInfoName}>User Name</div>
-              <div className={styles.userInfoTag}>@username</div>
+              <Link to={'/creatorPage'} className={styles.userInfoTag}>
+                @username
+              </Link>
             </div>
           </div>
           <div className={styles.title}>WFH - art name</div>

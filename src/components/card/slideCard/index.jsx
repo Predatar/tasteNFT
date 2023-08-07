@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './index.module.scss';
 
@@ -11,7 +12,7 @@ const SlideCard = () => {
         <img src={userIMg} alt="user" />
       </div>
       <div className={styles.slideCardName}>User Name</div>
-      <div className={styles.slideCardTag}>@username</div>
+      <Link to={'/creatorPage'} className={styles.slideCardTag}>@username</Link>
       <div className={styles.slideCardInfo}>24 sales on 32ETH</div>
     </div>
   );
