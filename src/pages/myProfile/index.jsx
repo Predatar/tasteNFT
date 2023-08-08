@@ -54,6 +54,7 @@ const MyProfile = () => {
 
   return (
     <>
+    {/* TODO поправить хедер на этой странице */}
       <Helmet>
         <title>My profile - TasteNFT</title>
       </Helmet>

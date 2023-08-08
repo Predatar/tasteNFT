@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import InfoModal from './infoModal';
 import ActivityRowGroup from '../../components/activityRowGroup';
 import ArtWorkGroup from '../../components/artWorkGroup';
+import PlaceBid from '../../components/modal/placeBid';
 
 import styles from './index.module.scss';
 
@@ -11,6 +13,20 @@ import artWork from '../../img/artWork/artWorkBig.jpg';
 import userImg from '../../img/user/user9.png';
 
 const ArtWorkPage = () => {
+  const [modal, setModal] = useState(false);
+
+  const openModal = () => {
+    if (!modal) {
+      setModal(!modal);
+    }
+  };
+
+  const closeModal = () => {
+    if (modal) {
+      setModal(!modal);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Helmet>
@@ -18,7 +34,7 @@ const ArtWorkPage = () => {
       </Helmet>
       <div className={styles.img}>
         <img src={artWork} alt="artWork" />
-        <InfoModal />
+        <InfoModal onClick={openModal} />
       </div>
       <div className={styles.info}>
         <div className={styles.infoWrapper}>
@@ -68,6 +84,7 @@ const ArtWorkPage = () => {
           <ArtWorkGroup />
         </div>
       </div>
+      {createPortal(<PlaceBid state={modal} onClick={closeModal} />, document.body)}
     </div>
   );
 };

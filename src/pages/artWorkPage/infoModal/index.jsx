@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 import miniLogo from '../../../img/miniLogo.svg';
 
-const InfoModal = () => {
+const InfoModal = (props) => {
   const [time, setTime] = useState('');
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
@@ -60,7 +60,7 @@ const InfoModal = () => {
         <div className={styles.timeTime}>{!time ? <Timer hour={hour} minute={minute} second={second} /> : time}</div>
       </div>
       <div className={styles.divider}></div>
-      <div className={styles.btn}>
+      <div className={styles.btn} onClick={props.onClick}>
         <Btn text={'Place a bid'} />
       </div>
     </div>
