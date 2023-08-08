@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Helmet } from 'react-helmet';
 import Btn from '../../components/button/btn/Btn';
 import Spinner from '../../components/spinner';
+import FollowerModal from '../../components/modal/follower';
 import ArtWorkGroup from '../../components/artWorkGroup';
 
 import styles from './index.module.scss';
@@ -10,6 +12,20 @@ import userImg from '../../img/user/user9.png';
 
 const CreatorProfile = () => {
   const [tab, setTab] = useState(true);
+
+  const [modal, setModal] = useState(false);
+
+  const openModal = () => {
+    if (!modal) {
+      setModal(!modal);
+    }
+  };
+
+  const closeModal = () => {
+    if (modal) {
+      setModal(!modal);
+    }
+  };
 
   const switchTab = e => {
     if (e.target.nextSibling == null) {
@@ -45,11 +61,15 @@ const CreatorProfile = () => {
           </div>
           <div className={styles.userDetail}>
             <div className={styles.userFollowers}>
-              <div className={styles.userFollowersCount}>234</div>
+              <div className={styles.userFollowersCount} onClick={openModal}>
+                234
+              </div>
               <div className={styles.userFollowersText}>Followers</div>
             </div>
             <div className={styles.userFollowing}>
-              <div className={styles.userFollowingCount}>15</div>
+              <div className={styles.userFollowingCount} onClick={openModal}>
+                15
+              </div>
               <div className={styles.userFollowingText}>Following</div>
             </div>
             <div className={styles.userBtn}>
@@ -102,6 +122,7 @@ const CreatorProfile = () => {
           <div className={styles.tab}>{tab ? <ArtWorkGroup /> : <Spinner />}</div>
         </div>
       </div>
+      {createPortal(<FollowerModal state={modal} onClick={closeModal} />, document.body)}
     </>
   );
 };
