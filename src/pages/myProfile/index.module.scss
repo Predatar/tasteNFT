@@ -1,0 +1,146 @@
+.wrapper {
+  margin: 40px auto 0;
+  width: min(100%, 1316px);
+}
+.user {
+  display: flex;
+  justify-content: space-between;
+}
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+.userImg {
+  width: 49px;
+  height: 49px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.15);
+}
+.userWrapper {
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.userName {
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 700;
+}
+.userTag {
+  margin-top: 4px;
+  background: linear-gradient(270deg, #8743ff 0%, #d8c2ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 500;
+}
+.userDetail {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.userFollowers {
+}
+.userFollowersCount,
+.userFollowingCount {
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.userFollowersText,
+.userFollowingText {
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.userFollowing {
+}
+.userExternal {
+  display: flex;
+  gap: 8px;
+}
+.externalLink {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.15);
+  }
+  span {
+    color: #fff;
+  }
+}
+.social {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.574));
+  }
+  span {
+    color: #fff;
+  }
+}
+.descr {
+  margin-top: 16px;
+  width: 1061px;
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  span {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+.tabs {
+  margin-top: 40px;
+}
+.selector {
+  display: flex;
+  gap: 24px;
+}
+.selectorItem {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.selectorItemActive {
+  color: #fff;
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}

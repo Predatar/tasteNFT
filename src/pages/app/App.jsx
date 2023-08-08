@@ -7,6 +7,7 @@ const MainPage = React.lazy(() => import('../main'));
 const Search = React.lazy(() => import('../search'));
 const ArtWorkPage = React.lazy(() => import('../artWorkPage'));
 const CreatorProfile = React.lazy(() => import('../creatorProfile'));
+const MyProfile = React.lazy(() => import('../myProfile'));
 import Spinner from '../../components/spinner';
 
 import styles from './App.module.scss';
@@ -37,15 +38,6 @@ const App = () => {
               </Suspense>
             )}
           </Route>
-          <Route path="/search">
-            {text ? (
-              <Suspense fallback={<Spinner />}>
-                <Search />
-              </Suspense>
-            ) : (
-              <Redirect to="/" />
-            )}
-          </Route>
           <Route path="/creatorPage">
             {text ? (
               <Redirect to="/search" />
@@ -53,6 +45,24 @@ const App = () => {
               <Suspense fallback={<Spinner />}>
                 <CreatorProfile />
               </Suspense>
+            )}
+          </Route>
+          <Route path="/myProfile">
+            {text ? (
+              <Redirect to="/search" />
+            ) : (
+              <Suspense fallback={<Spinner />}>
+                <MyProfile />
+              </Suspense>
+            )}
+          </Route>
+          <Route path="/search">
+            {text ? (
+              <Suspense fallback={<Spinner />}>
+                <Search />
+              </Suspense>
+            ) : (
+              <Redirect to="/" />
             )}
           </Route>
         </Switch>

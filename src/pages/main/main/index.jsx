@@ -26,12 +26,14 @@ const Main = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.userInfo}>
-          <div className={styles.userInfoImg}>
+          <Link to={'/myProfile'} className={styles.userInfoImg}>
             <img src={userImg} alt="img" />
-          </div>
+          </Link>
           <div className={styles.userInfoWrapper}>
             <div className={styles.userInfoName}>User Name</div>
-            <Link to={'/creatorPage'} className={styles.userInfoTag}>@username</Link>
+            <Link to={'/creatorPage'} className={styles.userInfoTag}>
+              @username
+            </Link>
           </div>
         </div>
         <div className={styles.info}>
