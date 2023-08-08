@@ -1,5 +1,5 @@
 import React, { useState, Suspense } from 'react';
-import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import { Route, HashRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 import Header from '../../components/header/Header';
 
