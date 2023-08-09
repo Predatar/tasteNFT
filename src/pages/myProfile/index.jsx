@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-
+import { createPortal } from 'react-dom';
 import { Helmet } from 'react-helmet';
 
 import Spinner from '../../components/spinner';
 import ProfileCardGroup from '../../components/profileCardGroup';
+import EditProfile from '../../components/modal/editProfile';
 
 import styles from './index.module.scss';
 
@@ -11,6 +12,19 @@ import userImg from '../../img/user/user9.png';
 
 const MyProfile = () => {
   const [tab, setTab] = useState(0);
+  const [modal, setModal] = useState(false);
+
+  const openModal = () => {
+    if (!modal) {
+      setModal(!modal);
+    }
+  };
+
+  const closeModal = () => {
+    if (modal) {
+      setModal(!modal);
+    }
+  };
 
   const switchTab = e => {
     const parentNode = e.target.parentNode;
@@ -54,7 +68,6 @@ const MyProfile = () => {
 
   return (
     <>
-    {/* TODO поправить хедер на этой странице */}
       <Helmet>
         <title>My profile - TasteNFT</title>
       </Helmet>
@@ -132,6 +145,7 @@ const MyProfile = () => {
           {renderTab()}
         </div>
       </div>
+      {createPortal(<EditProfile state={modal} onClick={closeModal} />, document.body)}
     </>
   );
 };

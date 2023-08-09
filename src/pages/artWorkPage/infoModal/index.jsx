@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 import miniLogo from '../../../img/miniLogo.svg';
 
-const InfoModal = (props) => {
+const InfoModal = props => {
   const [time, setTime] = useState('');
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
@@ -22,6 +22,8 @@ const InfoModal = (props) => {
     if (new Date().getDate() == 31) {
       let day = 1;
       dateText = `2023-08-0${++day}T12:00:00`;
+    } else if (new Date().getDate() + 1 > 9) {
+      dateText = `2023-08-${new Date().getDate() + 1}T12:00:00`;
     } else {
       dateText = `2023-08-0${new Date().getDate() + 1}T12:00:00`;
     }
@@ -34,7 +36,6 @@ const InfoModal = (props) => {
       setTime("Time's up!");
     } else {
       // Вычисляем оставшееся время
-      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
       const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);

@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import styles from './index.module.scss';
 
 import userImg from '../../../img/user/user9.png';
 
 const FollowerModal = ({ state, onClick }) => {
+  useEffect(() => {
+    if (state) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [state]);
+
   const swithTabs = e => {
     const parentNode = e.target.parentNode;
     parentNode.childNodes.forEach(elem => {

@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Cleave from 'cleave.js/react';
 import Btn from '../../button/btn/Btn';
 
 import styles from './index.module.scss';
 
 const ChangeTime = ({ active, closeModal }) => {
+  useEffect(() => {
+    if (active) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [active]);
   return (
     <div className={styles.modal + ' ' + (active ? styles.modalActive : '')}>
       <div className={styles.close} onClick={closeModal}>

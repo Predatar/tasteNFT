@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Cleave from 'cleave.js/react';
 
@@ -8,6 +8,14 @@ import styles from './index.module.scss';
 
 const PlaceBid = ({ state, onClick }) => {
   const [cost, setCost] = useState(0);
+
+  useEffect(() => {
+    if (state) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [state]);
 
   const handleInput = ({ target }) => {
     setCost((target.value * 0.000130854).toFixed(2));
@@ -28,7 +36,7 @@ const PlaceBid = ({ state, onClick }) => {
         <div className={styles.cost}>({cost}$)</div>
       </div>
       <div className={styles.btn}>
-        <Btn text={'Place'}/>
+        <Btn text={'Place'} />
       </div>
     </div>
   );

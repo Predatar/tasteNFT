@@ -14,6 +14,13 @@ const ConnectWallet = ({ state, onClick }) => {
   const [isMetaMask, setMetaMask] = useState(false);
 
   useEffect(() => {
+    if (state) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [state]);
+  useEffect(() => {
     setMetaMask(window.ethereum && window.ethereum.isMetaMask);
   }, []);
 
