@@ -1,10 +1,26 @@
-import React from 'react';
-import Logo from '../logo/Logo';
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
+import BtnHeader from '../button/btnHeader/BtnHeader';
+import ConnectWallet from '../modal/connectWallet';
 
 import styles from './Header.module.scss';
-import BtnHeader from '../button/btnHeader/BtnHeader';
+import Logo from '../logo/Logo';
 
 const Header = ({ text, setText }) => {
+  const [modal, setModal] = useState(false);
+
+  const openModal = () => {
+    if (!modal) {
+      setModal(!modal);
+    }
+  };
+
+  const closeModal = () => {
+    if (modal) {
+      setModal(!modal);
+    }
+  };
+
   const searchInput = ({ target }) => {
     setText(target.value);
   };
@@ -32,7 +48,8 @@ const Header = ({ text, setText }) => {
           </div>
         ) : null}
       </div>
-      <BtnHeader text="Connect wallet" />
+      <BtnHeader text="Connect wallet" onClick={openModal}/>
+      {createPortal(<ConnectWallet state={modal} onClick={closeModal} />, document.body)}
     </div>
   );
 };

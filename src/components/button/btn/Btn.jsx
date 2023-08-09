@@ -2,10 +2,8 @@ import React from 'react';
 
 import styles from './Btn.module.scss';
 
-const Btn = props => {
-  const { text } = props;
-
-  return <div className={styles.btn}>{text}</div>;
+const Btn = ({text, onClick}) => {
+  return <div className={styles.btn} onClick={onClick}>{text}</div>;
 };
 
 export default Btn;

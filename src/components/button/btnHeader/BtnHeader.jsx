@@ -3,7 +3,11 @@ import styles from './BtnHeader.module.scss';
 
 const BtnHeader = props => {
   const { text } = props;
-  return <div className={styles.btn}>{text}</div>;
+  return (
+    <div className={styles.btn} onClick={props.onClick}>
+      {text}
+    </div>
+  );
 };
 
 export default BtnHeader;
