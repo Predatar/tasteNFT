@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import Spinner from '../../components/spinner';
 import ProfileCardGroup from '../../components/profileCardGroup';
 import EditProfile from '../../components/modal/editProfile';
+import CreateArtWork from '../../components/modal/createArtwork';
 
 import styles from './index.module.scss';
 
@@ -12,17 +13,29 @@ import userImg from '../../img/user/user9.png';
 
 const MyProfile = () => {
   const [tab, setTab] = useState(0);
-  const [modal, setModal] = useState(false);
+  const [modalEdit, setModalEdit] = useState(false);
+  const [modalCreate, setModalCreate] = useState(true);
 
-  const openModal = () => {
-    if (!modal) {
-      setModal(!modal);
+  const openModalEdit = () => {
+    if (!modalEdit) {
+      setModalEdit(!modalEdit);
     }
   };
 
-  const closeModal = () => {
-    if (modal) {
-      setModal(!modal);
+  const closeModalEdit = () => {
+    if (modalEdit) {
+      setModalEdit(!modalEdit);
+    }
+  };
+  const openModalCreate = () => {
+    if (!modalCreate) {
+      setModalCreate(!modalCreate);
+    }
+  };
+
+  const closeModalCreate = () => {
+    if (modalCreate) {
+      setModalCreate(!modalCreate);
     }
   };
 
@@ -145,7 +158,8 @@ const MyProfile = () => {
           {renderTab()}
         </div>
       </div>
-      {createPortal(<EditProfile state={modal} onClick={closeModal} />, document.body)}
+      {createPortal(<EditProfile state={modalEdit} onClick={closeModalEdit} />, document.body)}
+      {createPortal(<CreateArtWork state={modalCreate} onClick={closeModalCreate} />, document.body)}
     </>
   );
 };

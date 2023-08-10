@@ -20,6 +20,8 @@ const ArtWork = props => {
     if (new Date().getDate() == 31) {
       let day = 1;
       dateText = `2023-08-0${++day}T12:00:00`;
+    } else if (new Date().getDate() + 1 > 9) {
+      dateText = `2023-08-${new Date().getDate() + 1}T12:00:00`;
     } else {
       dateText = `2023-08-0${new Date().getDate() + 1}T12:00:00`;
     }
