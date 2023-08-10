@@ -33,7 +33,13 @@ const App = () => {
   return (
     <div className={styles.app}>
       <Router>
-        <Header text={text} setText={setText} profile={profile} openModalCreate={openModalCreate}/>
+        <Header
+          text={text}
+          setText={setText}
+          profile={profile}
+          openModalCreate={openModalCreate}
+          openModalEdit={openModalEdit}
+        />
         <Switch>
           <Route exact path="/">
             {text ? (

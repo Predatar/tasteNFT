@@ -149,6 +149,7 @@ const CreateArtWork = ({ state, onClick }) => {
     const [copies, setCopies] = useState(1);
     const [cost, setCost] = useState(0);
     const [tab, setTab] = useState(true);
+    const [activeTime, setActiveTime] = useState(false);
 
     const minus = () => {
       if (copies > 1) {
@@ -215,19 +216,25 @@ const CreateArtWork = ({ state, onClick }) => {
         {tab ? (
           <div className={styles.sell}>
             <div className={styles.text}>Selling will end</div>
-            <div className={styles.sellWrapper}>
-              <Cleave
-                options={{ date: true, delimiter: '.', datePattern: ['d', 'm', 'Y'] }}
-                className={styles.date}
-                placeholder="00.00.0000"
-              />
-              <Cleave options={{ time: true, timePattern: ['h', 'm'] }} className={styles.time} placeholder="00:00" />
-              <div className={styles.timer}>05h 02m 41s</div>
-              <div className={styles.delete}>
-                <span className="icon-close"></span>
-                delete file
+            {activeTime ? (
+              <div className={styles.sellWrapper}>
+                <Cleave
+                  options={{ date: true, delimiter: '.', datePattern: ['d', 'm', 'Y'] }}
+                  className={styles.date}
+                  placeholder="00.00.0000"
+                />
+                <Cleave options={{ time: true, timePattern: ['h', 'm'] }} className={styles.time} placeholder="00:00" />
+                <div className={styles.timer}>05h 02m 41s</div>
+                <div className={styles.delete} onClick={() => setActiveTime(!activeTime)}>
+                  <span className="icon-close"></span>
+                  delete file
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className={styles.btnTime} onClick={() => setActiveTime(!activeTime)}>
+                Set timer
+              </div>
+            )}
           </div>
         ) : (
           ''
