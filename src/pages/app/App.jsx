@@ -14,11 +14,26 @@ import styles from './App.module.scss';
 
 const App = () => {
   const [text, setText] = useState('');
+  const [profile, setProfile] = useState(false);
+  const [modalEdit, setModalEdit] = useState(false);
+  const [modalCreate, setModalCreate] = useState(false);
+
+  const openModalEdit = () => {
+    if (!modalEdit) {
+      setModalEdit(!modalEdit);
+    }
+  };
+
+  const openModalCreate = () => {
+    if (!modalCreate) {
+      setModalCreate(!modalCreate);
+    }
+  };
 
   return (
     <div className={styles.app}>
       <Router>
-        <Header text={text} setText={setText} />
+        <Header text={text} setText={setText} profile={profile} openModalCreate={openModalCreate}/>
         <Switch>
           <Route exact path="/">
             {text ? (
@@ -52,7 +67,13 @@ const App = () => {
               <Redirect to="/search" />
             ) : (
               <Suspense fallback={<Spinner />}>
-                <MyProfile />
+                <MyProfile
+                  setProfile={setProfile}
+                  setModalEdit={setModalEdit}
+                  setModalCreate={setModalCreate}
+                  modalEdit={modalEdit}
+                  modalCreate={modalCreate}
+                />
               </Suspense>
             )}
           </Route>

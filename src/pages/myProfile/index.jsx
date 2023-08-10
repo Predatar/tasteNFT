@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Helmet } from 'react-helmet';
 
@@ -11,25 +11,17 @@ import styles from './index.module.scss';
 
 import userImg from '../../img/user/user9.png';
 
-const MyProfile = () => {
+const MyProfile = ({ setProfile, setModalEdit, setModalCreate, modalEdit, modalCreate }) => {
   const [tab, setTab] = useState(0);
-  const [modalEdit, setModalEdit] = useState(false);
-  const [modalCreate, setModalCreate] = useState(true);
 
-  const openModalEdit = () => {
-    if (!modalEdit) {
-      setModalEdit(!modalEdit);
-    }
-  };
+  useEffect(() => {
+    setProfile(true);
+  }, []);
+  useEffect(() => () => setProfile(false), []);
 
   const closeModalEdit = () => {
     if (modalEdit) {
       setModalEdit(!modalEdit);
-    }
-  };
-  const openModalCreate = () => {
-    if (!modalCreate) {
-      setModalCreate(!modalCreate);
     }
   };
 
